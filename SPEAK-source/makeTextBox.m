@@ -1,0 +1,19 @@
+function obj = makeTextBox(fig, s, var)
+% 
+
+obj = annotation(fig, s.labels.type, var.Position,...
+    'FontSize', var.FontSize,...
+    'LineStyle', s.labels.LineStyle,...
+    'HorizontalAlignment', s.labels.HorizontalAlignment,... 
+    'VerticalAlignment', s.labels.VerticalAlignment,... 
+    'BackgroundColor', var.BackgroundColor,...
+    'FaceAlpha', s.labels.FaceAlpha);
+
+if isfield(var, 'FontWeight')
+    obj.FontWeight = var.FontWeight;
+end
+
+if isfield(var, 'text')
+    obj.String = var.text;
+end
+end
